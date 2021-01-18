@@ -3,7 +3,9 @@ shopPhoto is a simple app that lets registered users upload/sell images and purc
 
 Live Deployment: https://shop-photo.netlify.app/ 
 ## Screenshots
-[insert images here]
+![Marketplace](https://user-images.githubusercontent.com/43117838/104883134-440ef580-5932-11eb-8e70-bfc7e56b1100.JPG)
+![AddCart](https://user-images.githubusercontent.com/43117838/104883150-50934e00-5932-11eb-9664-bcc4ff38a881.JPG)
+![cart](https://user-images.githubusercontent.com/43117838/104883157-525d1180-5932-11eb-8ac1-81264d87498a.JPG)
 
 ## Technology used
  - **React** Bootstrap for the frontend (bootstrapped with  [Create React App](https://github.com/facebook/create-react-app))
