@@ -38,9 +38,6 @@ export const create = handler(async (event, context) => {
       ":vals":
           [imageId]
     },
-    // 'ReturnValues' specifies if and how to return the item's attributes,
-    // where ALL_NEW returns all attributes of the item after the update; you
-    // can inspect 'result' below to see how it works with different settings
     ReturnValues: "ALL_NEW"
   };
     await dynamoDb.update(userUpdate);
@@ -49,34 +46,19 @@ export const create = handler(async (event, context) => {
 });
 
 export const get = handler(async (event, context) => {
+  //Scans the image table and returns all the images
     const params = {
       TableName: process.env.tableNameImages,
-      // 'Key' defines the partition key and sort key of the item to be retrieved
-      // - 'userId': Identity Pool identity id of the authenticated user
-      // - 'noteId': path parameter
       ProjectionExpression: ["attachment", "caption", "imageId"]
-    //   KeyConditionExpression: "#price = :a",
-    //   ExpressionAttributeNames:{
-    //     "#price": "price"
-    // },
-    //   ExpressionAttributeValues: {
-    //       ":a": 0
-    //   }
     };
     const result = await dynamoDb.scan(params);
-    // if ( ! result.Item) {
-    //   throw new Error("Item not found.");
-    // }
-    // Return the retrieved item
     return result.Items;
   });
 
   export const getSpecific = handler(async (event, context) => {
+    //Given a specific image, this function returns only that specific image
     const params = {
       TableName: process.env.tableNameImages,
-      // 'Key' defines the partition key and sort key of the item to be retrieved
-      // - 'userId': Identity Pool identity id of the authenticated user
-      // - 'noteId': path parameter
       Key: {
         imageId: event.pathParameters.id
       }

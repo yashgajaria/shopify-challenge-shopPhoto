@@ -59,12 +59,9 @@ export const get = handler(async (event, context) => {
 
   export const remove = handler(async (event, context) => {
     const data = JSON.parse(event.body);
-
+    //Get the cart of the current user to see if the item they want to remove is in the cart
     const params = {
       TableName: process.env.tableNameUsers,
-      // 'Key' defines the partition key and sort key of the item to be retrieved
-      // - 'userId': Identity Pool identity id of the authenticated user
-      // - 'noteId': path parameter
       Key: {
         userId: event.requestContext.identity.cognitoIdentityId,
       },
@@ -81,20 +78,13 @@ export const get = handler(async (event, context) => {
     Object.entries(res).map(([index, info]) => {
       if (info == data) itemRemove= index;
     });
+    //Deleting the specific item that the user wants deleted from their cart (stored as a list attribute on the user table)
     const deleteParams = {
       TableName: process.env.tableNameUsers,
       Key: {
         userId: event.requestContext.identity.cognitoIdentityId,
       },
-      // 'UpdateExpression' defines the attributes to be updated
-      // 'ExpressionAttributeValues' defines the value in the update expression
       UpdateExpression: `REMOVE cart[${itemRemove}]`,
-      // ExpressionAttributeValues: {
-      //   ":items": data,
-      // },
-      // 'ReturnValues' specifies if and how to return the item's attributes,
-      // where ALL_NEW returns all attributes of the item after the update; you
-      // can inspect 'result' below to see how it works with different settings
       ReturnValues: "ALL_NEW"
     };
     var res2= await dynamoDb.update(deleteParams);
