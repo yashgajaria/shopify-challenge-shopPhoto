@@ -3,8 +3,13 @@ shopPhoto is a simple app that lets registered users upload/sell images and purc
 
 Live Deployment: https://shop-photo.netlify.app/ 
 ## Screenshots
+View all images in the marketplace and upload your own image to sell.
 ![Marketplace](https://user-images.githubusercontent.com/43117838/104883134-440ef580-5932-11eb-8e70-bfc7e56b1100.JPG)
+
+Click a picture to view the image description/price. Add images to your cart from the image pages.
 ![AddCart](https://user-images.githubusercontent.com/43117838/104883150-50934e00-5932-11eb-9664-bcc4ff38a881.JPG)
+
+View and remove items in your cart and see the total price.
 ![cart](https://user-images.githubusercontent.com/43117838/104883157-525d1180-5932-11eb-8ac1-81264d87498a.JPG)
 
 ## Technology used
