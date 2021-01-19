@@ -1,7 +1,13 @@
 # shopPhoto- Buy and Sell Images
 shopPhoto is a simple app that lets registered users upload/sell images and purchase other people's uploaded images. This project started as a result of the Summer 2021 Shopify Intern Challenge of building an Image Repository.   
 
-Live Deployment: https://shop-photo.netlify.app/ 
+**Try it out!**  
+Live Deployment: https://shop-photo.netlify.app/   
+Sample username and password:  
+Username: `guest@example.com`  
+Password: `Shop12345$`  
+
+
 ## Screenshots
 View all images in the marketplace and upload your own image to sell.
 ![Marketplace](https://user-images.githubusercontent.com/43117838/104883134-440ef580-5932-11eb-8e70-bfc7e56b1100.JPG)
