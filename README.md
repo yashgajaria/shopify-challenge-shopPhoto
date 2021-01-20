@@ -3,9 +3,6 @@ shopPhoto is a simple app that lets registered users upload/sell images and purc
 
 **Try it out!**  
 Live Deployment: https://shop-photo.netlify.app/   
-Sample username and password:  
-Username: `guest@example.com`  
-Password: `Shop12345$`  
 
 
 ## Screenshots
